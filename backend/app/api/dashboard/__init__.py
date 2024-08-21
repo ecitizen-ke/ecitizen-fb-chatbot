@@ -1,6 +1,6 @@
 from flask import render_template
 from .views import dashboard_bp
-from app.models import Message
+from ...models import Message
 
 
 @dashboard_bp.route("/")
