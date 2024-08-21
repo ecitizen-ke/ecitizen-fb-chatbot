@@ -9,7 +9,7 @@ The dashboard will display metrics such as:
 """
 
 from flask import Blueprint, jsonify
-from app.models import Message, db
+from ...models import Message, db
 from sqlalchemy import func
 
 dashboard_bp = Blueprint("dashboard", __name__)
