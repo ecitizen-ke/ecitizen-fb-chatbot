@@ -1,8 +1,8 @@
 from flask import Blueprint, request, make_response
 from sqlalchemy import exc
-from extensions import db, bcrypt
+from ....extensions import db, bcrypt
 
-from app.models import User
+from ...models import User
 
 
 auth_blueprint = Blueprint("auth_blueprint", __name__)
