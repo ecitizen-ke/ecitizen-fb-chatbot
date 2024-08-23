@@ -10,6 +10,8 @@ import '../Theme.css'; // Importing the theme-specific CSS
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../contexts/AuthContext';
 import { jwtDecode } from 'jwt-decode';
+import isTokenExpired, { checkAuth } from '../utils/checkAuth';
+import MonitorUserActivity from '../components/MonitorUserActivity';
 
 const Home = () => {
   const { isAuth, token, setIsAuth } = useContext(AuthContext);
@@ -19,20 +21,11 @@ const Home = () => {
   const { theme, toggleTheme } = useTheme(); // Using the custom hook to get the current theme and the function to toggle it
   const navigate = useNavigate(); // Using the navigate hook to navigate between routes
 
-  const { iat, exp } = jwtDecode(token);
-
-  // Token validity duration in seconds
-  const TIME_OUT = exp - iat;
 
   useEffect(() => {
-    if (!isAuth) {
-      navigate('/login');
-    } else {
-      const interval = setInterval(() => {
-        setIsAuth(false);
-        navigate('/login');
-      }, TIME_OUT * 1000);
-      return () => clearInterval(interval);
+    
+    if (!checkAuth() || isTokenExpired()) {
+      navigate("/login");
     }
   }, [isAuth]);
 
@@ -52,6 +45,7 @@ const Home = () => {
           toggleTheme={toggleTheme}
           theme={theme}
         />
+        <MonitorUserActivity/>
         {/* // Rendering the Header component with props for toggling sidebar and theme, and passing the current theme */}
         <section className='cards'>
           {/* // Section for the card components */}
