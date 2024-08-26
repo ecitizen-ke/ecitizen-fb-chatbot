@@ -67,6 +67,9 @@ env=
     JWT_SECRET_KEY=my-sweet-jwt-secret-do-not-tell
     JWT_BLACKLIST_ENABLED=True
     JWT_BLACKLIST_TOKEN_CHECKS="['access', 'refresh']"
+    HUGGING_FACE_API_KEY= your-huggingface-issued-api-key
+    HUGGING_FACE_API_URL=your-huggingface_model_url
+    RESOURCE_PATH=your_path_to/ecitizen-fb-chatbot/backend/app/api/ai/faqs.txt
 ```
 
 `$ coverage run -m pytest -v`
@@ -87,13 +90,19 @@ env=
 | `POST` | `/api/v1/chatbot/auth/logout`   | `User Logout:` Revokes user access          |
 | `POST` | `/api/v1/chatbot/auth/refresh`  | `Refresh:` Regenerates user access tokens   |
 
+#### AI Endpoints
+
+| Method | Endpoint             | Functionality                                   |
+| ------ | -------------------- | ----------------------------------------------- |
+| `POST` | `/api/v1/chatbot/ai` | `User Interaction:` Interacts with the AI model |
+
 #### Server Requests and Responses
 
 ##### Sample user registration request body
 
 ```json
 {
-  "email": "test@ecitizen.co.ke",
+  "email": "test@ecitizen.go.ke",
   "password": "testpassword"
 }
 ```
@@ -111,7 +120,7 @@ env=
 
 ```json
 {
-  "email": "test@ecitizen.co.ke",
+  "email": "test@ecitizen.go.ke",
   "password": "testpassword"
 }
 ```
@@ -158,5 +167,22 @@ env=
 {
   "access_token": "eyJhbGciOiJIUrI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwMjIxOTQxNCwianRpIjoiM2Q5MDY3N2QtMmM2Yi00ZDY1LWFkODctMzM3MjBkODJkNDYyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImBkbWluQGVjaXRpemVuLmNvbSIsIm5iZiI6MTcyMjIx8TQxNCwiY3NyZiI6IjZiMPk1NWE0LWM2ZjYtNDFjNi04ZWQwLTA2MGQ3ZDliMjQxYSIsImV4cCI6MTcyMjIyMDMxNH0.w49lTF6RmkZSlybJKWBcNPhlvtEdkN3atPODu05F5AX",
   "status_code": 200
+}
+```
+
+##### Sample AI chatbot user query
+
+```json
+{
+  "question": "Can a soldier register a private security company?"
+}
+```
+
+##### Sample AI chatbot response
+
+```json
+{
+  "answer": "No. Current serving members of the disciplined forces cannot register a private security company. However, where a person has previously served in any of the disciplined forces, he or she must submit to the Authority a certificate of discharge and a certificate of clearance from such service.",
+  "message": "OK"
 }
 ```

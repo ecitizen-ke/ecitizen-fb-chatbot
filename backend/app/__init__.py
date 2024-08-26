@@ -32,6 +32,7 @@ def register_blueprints(app):
     from .api.auth.views import auth_blueprint
     from .api.facebook_api.views import facebook_api_bp
     from .api.dashboard.views import dashboard_bp
+    from .api.ai.views import ai_blueprint
 
     # Auth blueprint
     app.register_blueprint(auth_blueprint, url_prefix="/api/v1/chatbot")
@@ -39,6 +40,8 @@ def register_blueprints(app):
     app.register_blueprint(facebook_api_bp, url_prefix="/api/v1/chatbot")
     # Dashboard blueprint
     app.register_blueprint(dashboard_bp, url_prefix="/api/v1/chatbot")
+    # AI blueprint
+    app.register_blueprint(ai_blueprint, url_prefix="/api/v1/chatbot")
 
 
 @jwt.token_in_blocklist_loader
