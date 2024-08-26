@@ -44,12 +44,12 @@
 }
 
 /* Dark theme styles */
-.sidebar.dark-blue {
+.sidebar.dark {
   background-color: #333;
   color: white;
 }
 
-.sidebar.dark-blue ul li a {
+.sidebar.dark ul li a {
   color: white;
 }
 

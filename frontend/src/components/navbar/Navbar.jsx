@@ -1,13 +1,16 @@
 import React, { useContext } from 'react';
 import './Navbar.css';
-import profilePic from '../../assets/profileimage.png';
 import { useTheme } from '../../contexts/ThemeContext';
-import { FaMoon, FaSun } from 'react-icons/fa';
 import AuthContext from '../../contexts/AuthContext';
+
+// Import Material-UI icons
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import IconButton from '@mui/material/IconButton';
 
 const Navbar = ({ toggleSidebar }) => {
   const { theme, toggleTheme } = useTheme();
-
   const { logout } = useContext(AuthContext);
 
   return (
@@ -18,10 +21,12 @@ const Navbar = ({ toggleSidebar }) => {
       <h1 className={`header-txt header-text-${theme}`}>Dashboard</h1>
       <div className='user-info'>
         <span className={`header-text-${theme}`}>Welcome, Admin</span>
-        <img src={profilePic} alt='Admin' className='profile-pic' />
-        <button className='theme-toggle' onClick={toggleTheme}>
-          {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </button>
+        <IconButton color="inherit">
+          <AccountCircleIcon fontSize="large" />
+        </IconButton>
+        <IconButton onClick={toggleTheme} color="inherit">
+          {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+        </IconButton>
         <button onClick={logout} type='button' className='logout-btn'>
           Logout
         </button>

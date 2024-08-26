@@ -5,7 +5,7 @@ import pathlib
 import requests
 
 API_URL = os.environ["HUGGING_FACE_API_URL"]
-headers = {"Authorization": "Bearer " + os.environ["HUGGING_FACE_API_KEY"]}
+headers = {"Authorization": "Bearer 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"}
 PATH = os.environ["RESOURCE_PATH"]
 
 

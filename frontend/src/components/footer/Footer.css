@@ -1,15 +1,23 @@
 /* src/Footer.css */
 
 .footer {
-    background-color: white;
-    color: #333;    
     text-align: center;
     padding: 20px;
     position: absolute;
     width: 100%;
     bottom: 0;
-    /* margin-left: 290px; */
-}
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-light {
+    background-color: white;
+    color: #333;
+  }
+  
+  .footer-dark {
+    background-color: #818181;
+    color: white;
+  }
 
 .footer nav ul {
     list-style-type: none;
