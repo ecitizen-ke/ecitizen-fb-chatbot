@@ -3,9 +3,9 @@ import re
 import numpy
 import pathlib
 import requests
-
+bearer = os.environ["BEARER"]
 API_URL = os.environ["HUGGING_FACE_API_URL"]
-headers = {"Authorization": "Bearer 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"}
+headers = {f"Authorization": "Bearer {bearer}"}
 PATH = os.environ["RESOURCE_PATH"]
 
 

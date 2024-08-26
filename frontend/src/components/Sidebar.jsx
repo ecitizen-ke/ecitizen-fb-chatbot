@@ -18,7 +18,7 @@ const Sidebar = () => {
           <a href="#">Users</a>
         </li>
         <li>
-          <a href="#">Settings</a>
+          <a href="#">Form</a>
         </li>
         <li>
           <a href="#">Change Password</a>
