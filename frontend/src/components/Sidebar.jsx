@@ -1,11 +1,14 @@
-// src/components/Sidebar.js
+// src/components/Sidebar.jsx
 import React from "react";
 import "./Sidebar.css";
-import logo from "../assets/ecitizen.png"; // Add the logo file
+import logo from "../assets/ecitizen.png";
+import { useTheme } from "../contexts/ThemeContext"; // Import the useTheme hook
 
 const Sidebar = () => {
+  const { currentTheme } = useTheme(); // Use the useTheme hook to get the current theme
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${currentTheme}`}> {/* Add currentTheme as a class */}
       <img src={logo} alt="Logo" className="logo" />
       <ul>
         <li>

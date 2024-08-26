@@ -14,12 +14,17 @@ const useLocalStorage = (key, defaultValue) => {
       if (value) {
         return JSON.parse(value);
       } else {
-        localStorage.setItem(key, JSON.stringify(defaultValue));
+        if(defaultValue!==undefined){
+          localStorage.setItem(key, JSON.stringify(defaultValue));
         return defaultValue;
+        }
+        
       }
     } catch (error) {
+      if(defaultValue!==undefined){
       localStorage.setItem(key, JSON.stringify(defaultValue));
       return defaultValue;
+      }
     }
   });
 
@@ -32,8 +37,10 @@ const useLocalStorage = (key, defaultValue) => {
     } else {
       newValue = valueOrFn;
     }
+    if(newValue !== undefined){
     localStorage.setItem(key, JSON.stringify(newValue));
     setLocalStorageValue(newValue);
+    }
   };
   return [localStorageValue, setLocalStorageStateValue];
 };
