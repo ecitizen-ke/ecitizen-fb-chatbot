@@ -96,6 +96,10 @@ button[type='submit']:hover {
   text-align: center;
   margin-top: 10px;
 }
+.text-danger{
+  color: red;
+  font-weight: bold;
+}
 
 /* Tablet styles */
 @media (max-width: 1024px) {
