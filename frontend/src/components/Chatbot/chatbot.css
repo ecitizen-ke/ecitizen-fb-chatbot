@@ -85,3 +85,12 @@ input {
   background-color: #218838;
 }
 
+.message.bot {
+  background-color: #9e9d9d;
+  align-self: flex-start;
+}
+
+.message.typing {
+  font-style: italic;
+  color: #aaa;
+}
