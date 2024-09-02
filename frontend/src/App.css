@@ -19,7 +19,7 @@ body {
   left: 0;
   top: 0;
   overflow: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
   z-index: 999;
 }
 
@@ -45,7 +45,7 @@ body {
   margin-left: 250px;
   padding: 20px;
   flex-grow: 1;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.1s ease;
 }
 
 /* .header {
@@ -63,6 +63,7 @@ body {
   margin-bottom: 180px;
   height: 80%;
   flex-wrap: wrap;
+  border-radius: 3px;
 }
 
 .card {
@@ -96,6 +97,7 @@ button:hover {
 .menu-toggle {
   /* display: none; */
   color: red;
+  opacity: 0%;
   font-size: 24px;
   background: none;
   border: none;
@@ -135,3 +137,7 @@ button:hover {
   background-color: #333;
   color: #f4f4f4;
 }
+
+/* h3, p{
+  color: #333;
+} */

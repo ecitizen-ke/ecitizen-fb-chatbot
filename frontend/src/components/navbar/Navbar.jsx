@@ -8,6 +8,8 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import IconButton from '@mui/material/IconButton';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 const Navbar = ({ toggleSidebar }) => {
   const { theme, toggleTheme } = useTheme();
@@ -27,9 +29,10 @@ const Navbar = ({ toggleSidebar }) => {
         <IconButton onClick={toggleTheme} color="inherit">
           {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
-        <button onClick={logout} type='button' className='logout-btn'>
-          Logout
-        </button>
+        <IconButton onClick={logout} color="inherit">
+  <LogoutIcon />
+</IconButton>
+
       </div>
     </header>
   );

@@ -70,6 +70,7 @@ env=
     HUGGING_FACE_API_KEY= your-huggingface-issued-api-key
     HUGGING_FACE_API_URL=your-huggingface_model_url
     RESOURCE_PATH=your_path_to/ecitizen-fb-chatbot/backend/app/api/ai/faqs.txt
+    LARGE_LANGUAGE_MODEL=your-large-language-model
 ```
 
 `$ coverage run -m pytest -v`

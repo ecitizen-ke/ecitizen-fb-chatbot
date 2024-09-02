@@ -1,20 +1,21 @@
 /* src/components/Header.css */
 .header {
-  padding: 20px;
+  padding: auto;
   margin-bottom: 20px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.1s ease;
 }
 
 .header-light {
-  background-color: white;
+  background-color: #f0f0f0;
   color: #333;
 }
 
 .header-dark {
-  background-color: #818181;
+  background-color: #333;
   color: white;
 }
 
@@ -57,7 +58,7 @@
 }
 
 .header-text-dark {
-  color: #1f1e1e;
+  color: #f0f0f0;
 }
 .header-txt {
   margin-left: 10px;
