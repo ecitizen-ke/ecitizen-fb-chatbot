@@ -32,6 +32,7 @@ h2 {
 
 img {
   object-fit: contain;
+  padding-left:40%;
 }
 
 form {
