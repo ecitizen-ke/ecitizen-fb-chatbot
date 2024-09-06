@@ -48,15 +48,6 @@ body {
   transition: margin-left 0.1s ease;
 }
 
-/* .header {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
 .cards {
   display: flex;
   justify-content: space-between;
@@ -137,7 +128,3 @@ button:hover {
   background-color: #333;
   color: #f4f4f4;
 }
-
-/* h3, p{
-  color: #333;
-} */

@@ -28,11 +28,11 @@ h2 {
 
 .banner {
   height: 70px;
+  padding-left:40%;
 }
 
 img {
   object-fit: contain;
-  padding-left:40%;
 }
 
 form {
