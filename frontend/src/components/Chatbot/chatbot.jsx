@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './chatbot.css';
+import { useTheme } from '../../contexts/ThemeContext'; // Import useTheme
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isThinking, setIsThinking] = useState(false);
+  const { theme } = useTheme(); // Use the theme context
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,14 +38,14 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chat-window">
+    <div className={`chatbot chatbot-${theme}`}> {/* Add theme class */}
+      <div className={`chat-window chat-window-${theme}`}> {/* Add theme class */}
         {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
+          <div key={index} className={`message ${message.sender} message-${theme}`}> {/* Add theme class */}
             {message.text}
           </div>
         ))}
-        {isThinking && <div className="message bot">System is thinking...</div>}
+        {isThinking && <div className={`message bot message-${theme}`}>System is thinking...</div>}
       </div>
       <form onSubmit={handleSubmit}>
         <input
@@ -50,8 +53,9 @@ const Chatbot = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type a message..."
+          className={`input-${theme}`}
         />
-        <button id="chatbotButton" type="submit">Send</button>
+        <button id="chatbotButton" type="submit" className={`button-${theme}`}>Send</button> {/* Add theme class */}
       </form>
     </div>
   );
