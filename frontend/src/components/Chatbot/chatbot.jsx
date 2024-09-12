@@ -38,10 +38,10 @@ const Chatbot = () => {
   };
 
   return (
-    <div className={`chatbot chatbot-${theme}`}> {/* Add theme class */}
-      <div className={`chat-window chat-window-${theme}`}> {/* Add theme class */}
+    <div className={`chatbot chatbot-${theme}`}>
+      <div className={`chat-window chat-window-${theme}`}>
         {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender} message-${theme}`}> {/* Add theme class */}
+          <div key={index} className={`message ${message.sender} message-${theme}`}>
             {message.text}
           </div>
         ))}
@@ -55,7 +55,7 @@ const Chatbot = () => {
           placeholder="Type a message..."
           className={`input-${theme}`}
         />
-        <button id="chatbotButton" type="submit" className={`button-${theme}`}>Send</button> {/* Add theme class */}
+        <button id="chatbotButton" type="submit" className={`button-${theme}`}>Send</button>
       </form>
     </div>
   );

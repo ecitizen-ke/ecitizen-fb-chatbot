@@ -93,16 +93,6 @@ input {
   color: #333333;
 }
 
-/* input::placeholder {
-  color: #ccc;
-} */
-
-/* input:focus {
-  outline: none;
-  border-color: #007bff;
-  background-color: #5c5c5c;
-} */
-
 #chatbotButton {
   padding: 10px 35px;
   margin-top: 5px;
