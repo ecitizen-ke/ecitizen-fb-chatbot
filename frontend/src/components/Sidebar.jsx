@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import logo from "../assets/ecitizen.png";
+import logo from "../assets/logo.svg";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Sidebar = () => {
