@@ -74,13 +74,15 @@ form {
 
 input {
   flex-grow: 1;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   padding: 10px;
-  border-radius: 5px 0 0 5px;
+  /* border-radius: 5px 0 0 5px; */
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
   box-sizing: border-box;
   height: 40px;
+  width: 350px;
 }
 
 .input-dark {
