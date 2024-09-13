@@ -1,27 +1,22 @@
-// src/components/Sidebar.js
+// src/components/Sidebar.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import logo from "../assets/ecitizen.png"; // Add the logo file
+import logo from "../assets/logo.svg";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Sidebar = () => {
+  const { currentTheme } = useTheme();
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${currentTheme}`}>
       <img src={logo} alt="Logo" className="logo" />
       <ul>
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">Users</a>
-        </li>
-        <li>
-          <a href="#">Settings</a>
-        </li>
-        <li>
-          <a href="#">Change Password</a>
-        </li>
-        <li>
-          <a href="#">Logout</a>
+          <Link to="/form">Form</Link>
         </li>
       </ul>
     </div>

@@ -2,15 +2,12 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #333;
-  color: white;
   padding: 20px;
-  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   overflow: auto;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sidebar h2 {
@@ -28,10 +25,42 @@
 }
 
 .sidebar ul li a {
-  color: white;
   text-decoration: none;
 }
-img {
+
+.sidebar img {
   width: 100%;
   height: auto;
 }
+
+/* Light theme styles */
+.sidebar.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.sidebar.light ul li a {
+  color: #333;
+}
+
+/* Dark theme styles */
+.sidebar.dark {
+  background-color: #333;
+  color: white;
+}
+
+.sidebar.dark ul li a {
+  color: white;
+}
+
+/* Add more dark theme variations as needed */
+.sidebar.dark-green {
+  background-color: #1b5e20;
+  color: white;
+}
+
+.sidebar.dark-green ul li a {
+  color: white;
+}
+
+/* Add other dark mode colors as needed */

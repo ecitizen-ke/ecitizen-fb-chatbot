@@ -1,4 +1,3 @@
-/* src/components/Card.css */
 .card {
   background-color: #e2e2e2;
   padding: 20px;
@@ -7,4 +6,14 @@
   flex: 1;
   margin: 10px;
   min-width: 200px;
+}
+
+.card-dark { /* Dark mode style */
+  background-color: #555; /* A darker background for dark mode */
+  color: white; /* Ensure text is visible on a dark background */
+}
+
+.card-light { /* Light mode style */
+  background-color: #e2e2e2;
+  color: black;
 }
